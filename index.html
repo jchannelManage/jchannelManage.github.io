@@ -3,69 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JChannelサポート</title>
+    <title>JChannel</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #00f2ff;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #00f2ff;
-            color: #fff;
-            margin-top: 20px;
-        }
+        /* ここにCSSを書く */
+		body {
+			font-family: 'Roboto', sans-serif;
+			background-color: #1a1a1a;
+			color: #f1f1f1;
+			line-height: 1.6;
+		}
+
+		header {
+			background-color: #0d0d0d;
+			padding: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			z-index: 10;
+			box-sizing: border-box;
+		}
+
+		header .logo h1 {
+			color: #ff4b4b;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		nav ul {
+			list-style: none;
+			display: flex;
+			padding: 0;
+			margin: 0;
+			gap: 20px;
+		}
+
+		nav ul li a {
+			color: #f1f1f1;
+			text-decoration: none;
+			font-weight: bold;
+			transition: color 0.3s ease;
+		}
+
+		nav ul li a:hover {
+			color: #ff4b4b;
+		}
+
+		.nav-menu {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.hero {
+			background: url('jpose.png') no-repeat center center/cover;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #0d0d0d;
+			background: url('images/hero-bg.jpg') no-repeat center center/cover;
+			position: relative;
+		}
+
+		.hero-content {
+			text-align: center;
+			z-index: 2;
+		}
+
+		.hero h1 {
+			font-size: 48px;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+
+		.hero p {
+			font-size: 18px;
+			color: #aaa;
+			margin-bottom: 30px;
+		}
+
+		.cta-button {
+			padding: 15px 30px;
+			background-color: #ff4b4b;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 50px;
+			transition: background-color 0.3s ease;
+		}
+
+		.cta-button:hover {
+			background-color: #e63939;
+		}
+
+		.features-section {
+			padding: 100px 20px;
+			background-color: #1a1a1a;
+		}
+
+		.features-section h2 {
+			text-align: center;
+			font-size: 36px;
+			color: #ff4b4b;
+			margin-bottom: 50px;
+		}
+
+		.features {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		.feature-item {
+			background-color: #2e2e2e;
+			padding: 30px;
+			border-radius: 10px;
+			width: 250px;
+			text-align: center;
+			margin-bottom: 20px;
+			transition: transform 0.3s ease;
+		}
+
+		.feature-item:hover {
+			transform: translateY(-10px);
+		}
+
+		.feature-item h3 {
+			font-size: 22px;
+			margin-bottom: 15px;
+			color: #fff;
+		}
+
+		.feature-item p {
+			color: #bbb;
+		}
+
+		.community-section {
+			padding: 100px 20px;
+			background-color: #0d0d0d;
+			text-align: center;
+		}
+
+		.community-section h2 {
+			font-size: 36px;
+			color: #ff4b4b;
+		}
+
+		.community-section p {
+			color: #bbb;
+			font-size: 18px;
+		}
+
+		.download-section {
+			padding: 100px 20px;
+			background-color: #1a1a1a;
+			text-align: center;
+		}
+
+		.download-section h2 {
+			font-size: 36px;
+		}
+
+		.download-button {
+			display: inline-block;
+			background-color: #ff4b4b;
+			color: #fff;
+			padding: 15px 30px;
+			margin: 10px;
+			text-decoration: none;
+			border-radius: 50px;
+			font-size: 18px;
+		}
+
+		.download-button:hover {
+			background-color: #e63939;
+		}
+
+		footer {
+			background-color: #0d0d0d;
+			padding: 20px;
+			text-align: center;
+			color: #fff;
+		}
     </style>
 </head>
 <body>
-    <header>
-        <h1>JChannelサポート</h1>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="logo">
+            <h1>JChannel</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#features">特徴</a></li>
+                <!-- <li><a href="#community">コミュニティ</a></li> -->
+                <li><a href="#download">ダウンロード</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section>
-        <h2>アプリ概要</h2>
-        <p>JChannelでは、ユーザーがスレッドを作成しテーマをもとに投稿を行ったり、つぶやき広場でテーマを決めずに気楽につぶやけることができます。</p>
-        <p>他のユーザーの投稿を閲覧し、スレッドをお気に入りに登録することも可能です。</p>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>JChannel掲示板</h1>
+            <p>うんこちゃんの視聴者が集う憩いの掲示板アプリ</p>
+            <a href="#download" class="cta-button">今すぐダウンロード</a>
+        </div>
     </section>
 
-    <section>
-        <h2>アイテムについて</h2>
-        <h3>Uコイン</h3>
-        <p>Uコインはスレッドを作成したり、投稿を行ったりするために使用します。スレッドや投稿ごとに一定量のUコインが消費されます。</p>
-
-        <h3>Uチケット</h3>
-        <p>Uチケットは、お気に入り登録できるスレッド数を拡張するために使用します。特定のスレッドをお気に入りに追加したい場合、Uチケットを使用して登録数を増やすことができます。</p>
+    <!-- 特徴セクション -->
+    <section id="features" class="features-section">
+        <h2>JChannelの特徴</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>スレッド機能</h3>
+                <p>話題に沿って特定の話題について書き込む</p>
+            </div>
+            <div class="feature-item">
+                <h3>つぶやき広場</h3>
+                <p>日常の出来事や、配信に関するちょっとした感想など、気軽に投稿できる広場</p>
+            </div>
+            <div class="feature-item">
+                <h3>お気に入り機能</h3>
+                <p>重要なスレッドを保存していつでもチェック</p>
+            </div>
+            <div class="feature-item">
+                <h3>いいね機能</h3>
+                <p>気に入った投稿に「いいね」</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>UコインとUチケットの入手方法</h2>
-        <p>Uコインは毎朝6時から18時までの間にデイリーボーナスで広告を視聴することによって入手できます。また、投稿時にUコインが足りない場合も広告を視聴することによって入手できます。</p>
-        <p>Uチケットは18時から翌朝6時までの間にデイリーボーナスや広告の視聴によって入手できます。</p>
-        <p>毎日ログインしてボーナスを獲得し、必要なアイテムを集めましょう。</p>
+    <!-- ダウンロードセクション -->
+    <section id="download" class="download-section">
+        <h2>アプリをダウンロード</h2>
+        <a href="#" class="download-button">iOS版</a>
+        <a href="#" class="download-button">Android版</a>
     </section>
 
+    <!-- フッター -->
     <footer>
-        <p>© 2024 JChannel</p>
+        <p>&copy; 2024 JChannel. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
